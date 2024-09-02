@@ -1,3 +1,6 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+---
 ## Ejercicio 1
 ```vs
         Dim nota1 As Double

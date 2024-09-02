@@ -1,0 +1,17 @@
+---
+interface Props {
+    ruta, contenido: string;
+}
+const {ruta, contenido} = Astro.props
+---
+
+<a href={ruta}>{contenido}</a>
+
+<style>
+    a {
+        color: #fff
+    }
+    a:visited{
+        color: #d3cfce;
+    }
+</style>
