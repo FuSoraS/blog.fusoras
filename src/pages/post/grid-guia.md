@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
+title: Uso de grid para card
 ---
-# Uso de grid para card
 [Repositorio en GitHub](https://github.com/FuSoraS/explicaciones-rapidas)
 - `display: grid` Cambiamos el modo de la etiqueta `section` a grid esto nos permite usar columnas y filas.
 - `grid-template-columns: repeat(3, 1fr);` Definimos `3` columnas, `1fr` definimos que las 3 columnas tienen que ocupar el mismo espacio

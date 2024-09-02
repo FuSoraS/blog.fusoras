@@ -1,5 +1,6 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
+title: Ejercicios de Visual Basic
 ---
 ## Ejercicio 1
 ```vs

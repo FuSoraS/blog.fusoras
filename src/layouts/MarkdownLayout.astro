@@ -1,3 +1,7 @@
+---
+const { frontmatter } = Astro.props;
+---
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +10,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>{frontmatter.title}</h1>
     <slot/>
 </body>
 <style>
