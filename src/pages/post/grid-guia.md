@@ -1,6 +1,8 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
 title: Uso de grid para card
+Description:
+author: FuSoraS
 ---
 [Repositorio en GitHub](https://github.com/FuSoraS/explicaciones-rapidas)
 - `display: grid` Cambiamos el modo de la etiqueta `section` a grid esto nos permite usar columnas y filas.

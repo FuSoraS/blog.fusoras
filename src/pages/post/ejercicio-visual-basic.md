@@ -1,6 +1,8 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
 title: Ejercicios de Visual Basic
+Description:
+author: FuSoraS
 ---
 ## Ejercicio 1
 ```vs
