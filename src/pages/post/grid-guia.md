@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
 title: Uso de grid para card
-Description:
+description: Explicacion rapida de como usar grid
 author: FuSoraS
 ---
 [Repositorio en GitHub](https://github.com/FuSoraS/explicaciones-rapidas)

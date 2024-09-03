@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
 title: Cambiar al español el Visual Studio Code
-Description: Cambiar el idioma a Visual Studio code
+description: Cambiar el idioma a Visual Studio code
 author: FuSoraS
 ---
 

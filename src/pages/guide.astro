@@ -1,12 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import CardPost from "../components/CardPost.astro"
-const { frontmatter } = Astro.props;
 ---
 
 <Layout title="Guias" description="Guias en posts">
     <h1>Guias</h1>
-    <CardPost path="/blog.fusoras/post/grid-guia" title="Grid guia explicacion rapida" description=""/>
-    <CardPost path="/blog.fusoras/post/cambiar-idioma-vscode" title="Cambiar al español el Visual Studio Code" description=""/>
-    <CardPost path="/blog.fusoras/post/mi-configuracion-vscode" title="Mi configuracion de Visual Studio Code" description=""/>
+    <CardPost path="/blog.fusoras/post/grid-guia" 
+    title="Grid guia explicacion rapida" 
+    />
+    <CardPost path="/blog.fusoras/post/cambiar-idioma-vscode" 
+    title="Cambiar al español el Visual Studio Code" 
+    />
+    <CardPost path="/blog.fusoras/post/mi-configuracion-vscode" 
+    title="Mi configuracion de Visual Studio Code" 
+    />
 </Layout>

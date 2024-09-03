@@ -1,20 +1,25 @@
 ---
 interface Props {
-    path, title, description: string;
+    path, title: string;
 }
-const {path, title, description} = Astro.props
+const {path, title} = Astro.props
 ---
 <div>
     <a href={path}>{title}</a>
-    <p>{description}</p>
 </div>
 <style>
     div {
         background-color: #555;
         padding: 10px;
+        margin: 10px 50px;
     }
     a {
-        color: #fff
+        color: #fff;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #fff;
+        text-decoration: underline;
     }
     a:visited{
         color: #d3cfce;
