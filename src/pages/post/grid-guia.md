@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
-title: Uso de grid para card
-Description:
+title: Cambiar al español el Visual Studio Code
+Description: Cambiar el idioma en vscode
 author: FuSoraS
 ---
 [Repositorio en GitHub](https://github.com/FuSoraS/explicaciones-rapidas)
