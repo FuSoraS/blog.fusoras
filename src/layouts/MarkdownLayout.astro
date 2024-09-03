@@ -1,4 +1,6 @@
 ---
+import GlobalStyles from "../components/GlobalStyles.astro";
+import Header from "../components/Header.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -12,13 +14,9 @@ const { frontmatter } = Astro.props;
     <title>{frontmatter.title}</title>
 </head>
 <body>
+    <Header />
     <h1>{frontmatter.title}</h1>
     <slot/>
 </body>
-<style>
-    body {
-        background-color: #000;
-        color: #fff;
-    }
-</style>
+<GlobalStyles />
 </html>

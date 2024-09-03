@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+import GlobalStyles from '../components/GlobalStyles.astro';
 interface Props {
 	title, description: string;
 }
@@ -17,41 +19,8 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<nav>
-			<ul class="nav__list">
-				<li class="nav__item"><a class="nav__link" href="/blog.fusoras/index.html">Home</a></li>
-				<li class="nav__item"><a class="nav__link" href="/blog.fusoras/guide">Guias</a></li>
-				<li class="nav__item"><a class="nav__link" href="/blog.fusoras/other">Otros</a></li>
-			</ul>
-		</nav>
+		<Header />
 		<slot />
 	</body>
-	<style>
-			body {
-				background-color: #3b3b3b;
-				color: #fff;
-				font-family: sans-serif;
-			}
-			.nav__list {
-				list-style-type: none;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-wrap: wrap;
-			}
-			.nav__item {
-				margin: 10px;
-			}
-			.nav__link {
-				color: #fff;
-				text-decoration: none;
-				transition: background-color 200ms;
-				padding: 5px 10px;
-				border-radius: 5px 10px;
-			}
-			.nav__link:hover {
-				background-color: #fff;
-				color: #000;
-			}
-	</style>
+<GlobalStyles />
 </html>

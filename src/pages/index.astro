@@ -1,8 +1,16 @@
 ---
+import GlobalStyles from '../components/GlobalStyles.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Blog" description='Blog que contiene guias de diversas cosas y ejercicios de programacion'>
-	<h1>Inicio del blog</h1>
-	<p>Recopilacion de guias y ejercicio de programacion</p>
+	<h1 class="main__title">Inicio del blog</h1>
+	<p class="main__paragraph">Recopilacion de guias y ejercicio de programacion</p>
 </Layout>
+<GlobalStyles />
+<style>
+	.main__paragraph {
+		margin-top: 50px;
+		margin-left: 50px;
+	}
+</style>
