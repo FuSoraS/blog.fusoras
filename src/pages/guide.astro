@@ -1,17 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import CardPost from "../components/CardPost.astro"
+const pathRoot = "/blog.fusoras/post/";
 ---
 
 <Layout title="Guias" description="Guias en posts">
     <h1 class="main__title">Guias</h1>
-    <CardPost path="/blog.fusoras/post/grid-guia" 
+    <CardPost path={`${pathRoot}grid-guia`}
     title="Grid guia explicacion rapida" 
     />
-    <CardPost path="/blog.fusoras/post/cambiar-idioma-vscode" 
+    <CardPost path={`${pathRoot}cambiar-idioma-vscode`}
     title="Cambiar al español el Visual Studio Code" 
     />
-    <CardPost path="/blog.fusoras/post/mi-configuracion-vscode" 
+    <CardPost path={`${pathRoot}mi-configuracion-vscode`} 
     title="Mi configuracion de Visual Studio Code" 
     />
 </Layout>
