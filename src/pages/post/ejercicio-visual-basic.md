@@ -201,7 +201,7 @@ aquellos que son múltiplos de 3.
             contador += 1
         Next
 ```
-## Ejercicio 7 (no terminado)
+## Ejercicio 7
 ### Ejercicio 7 – Validación de Contraseña:
 Desarrolla un programa que permita al usuario ingresar una contraseña y verificar
 si cumple con los siguientes criterios de seguridad:
@@ -209,50 +209,63 @@ si cumple con los siguientes criterios de seguridad:
 - ✓ La contraseña debe contener al menos una letra (Mayúscula o minúscula).
 - ✓ La contraseña debe contener al menos un número.
 ```vs
-Module Module1
-
-    Sub Main()
         Dim password As String
         Dim cPassword As Integer
         Dim numero As Char
         Dim opcion As Integer = 0
 
         While opcion < 2
-
-            password = InputBox("Ingrese su contraseña: ")
+            password = InputBox("La contraseña tiene que contener número, letra mayúscula y minúscula. 
+Ingrese su contraseña: ")
             cPassword = Len(password)
 
+            ' Validar ancho de la cadena de texto
             If cPassword >= 8 Then
-                For Each numero In password
-                    Char.IsDigit(numero)
-                    Char.IsLetter(numero)
-                    If IsNumeric(numero) Then
-                        If Char.IsUpper(numero) Then
-                            If Char.IsLower(numero) Then
-                                MsgBox("Contraseña: " & password)
-                                opcion = InputBox("Ingrese 1 volver a ingresar
-Ingrese 2 para salir")
-                            Else
-                                MsgBox("Inserte minimamente una letrea en minuscula")
-                            End If
-                        Else
-                            MsgBox("Inserte minimamente una letra en mayuscula")
-                        End If
+                Dim contieneNumero, contieneMinu, contieneMayu As Boolean
+                contieneNumero = False
+                contieneMinu = False
+                contieneMayu = False
 
-                    Else
-                        MsgBox("Ingrese minimo un numero")
+                ' Validar número
+                For Each caracter In password
+                    If Char.IsDigit(caracter) Then
+                        contieneNumero = True
+                        Exit For
                     End If
-
                 Next
+
+                ' Validar letra minúscula
+                For Each letra In password
+                    If Char.IsLower(letra) Then
+                        contieneMinu = True
+                        Exit For
+                    End If
+                Next
+
+                ' Validar letra mayúscula
+                For Each letra In password
+                    If Char.IsUpper(letra) Then
+                        contieneMayu = True
+                        Exit For
+                    End If
+                Next
+
+                ' Mostrar mensajes de error si algo no se cumple
+                If Not contieneNumero Then
+                    MsgBox("No contiene un número tu contraseña")
+                ElseIf Not contieneMinu Then
+                    MsgBox("No contiene una letra minúscula")
+                ElseIf Not contieneMayu Then
+                    MsgBox("No contiene una letra mayúscula")
+                Else
+                    ' Si todos los criterios se cumplen, mostrar mensaje de éxito y salir del bucle
+                    MsgBox("¡Contraseña válida!")
+                    Exit While
+                End If
             Else
-                MsgBox("La contraseña tiene que tener minimo 8 caracteres")
+                MsgBox("La contraseña tiene que tener mínimo 8 caracteres")
             End If
-
-
         End While
-    End Sub
-
-End Module
 ```
 ## Ejercicio 8 (no terminado)
 ### Ejercicio 8 – Reservación de hotel
@@ -261,16 +274,16 @@ seleccionar una habitación y calcular el costo total de su estadía. El sistema
 descuentos, impuestos y validar todas las entradas.
 Detalles del sistema:
 1. Ingreso de datos del usuario:
-▪ Nombre del cliente.
-▪ Número de identificación (validar que sea un número de 8 a 10 dígitos).
+    - ▪ Nombre del cliente.
+    - ▪ Número de identificación (validar que sea un número de 8 a 10 dígitos).
 2. Selección de la cantidad de noches de estadía:
 El usuario debe ingresar la cantidad de noches que planea hospedarse. Validar que la 
 cantidad de noches sea un número positivo mayor que 0.
 3. Selección del tipo de habitación:
-▪ Habitación Económica: $50.000 por noche.
-▪ Habitación Estándar: $80.000 por noche.
-▪ Habitación Suite: $120.000 por noche.
-▪ Validar que la opción seleccionada sea una de las tres disponibles.
+    - ▪ Habitación Económica: $50.000 por noche.
+    - ▪ Habitación Estándar: $80.000 por noche.
+    - ▪ Habitación Suite: $120.000 por noche.
+    - ▪ Validar que la opción seleccionada sea una de las tres disponibles.
 4. Descuentos:
 Si la cantidad de noches es mayor a 5, se aplicará un descuento del 10% sobre el total 
 antes de impuestos.
@@ -295,6 +308,8 @@ Validaciones:
 El programa finalizar cuando el usuario lo desee. De lo contrario se podrá continuar reservando
 habitaciones
 ```vs
+Module VBModule
+    Sub Main()
         Dim nombre As String
         Dim id As String
         Dim cId As Integer
@@ -304,18 +319,20 @@ habitaciones
         Dim descuentoAplicado As Integer
         Dim calculo As Integer
         Dim habitacion As Integer
-
-        nombre = InputBox("Ingrese su nombre: ")
-        id = InputBox("Ingrese su Número de identificación:
-(rango de 8 a 10) ")
+        console.WriteLine("Ingrese su nombre: ")
+        nombre = console.ReadLine()
+        console.WriteLine("Ingrese su Numero de indentificación: ")
+        id = console.ReadLine()
         cId = Len(id)
         If cId >= 8 And cId <= 10 Then
-            noche = InputBox("Ingrese la cantidad de noche: ")
+            Console.WriteLine("Ingrese la cantidad de noche: ")
+            noche = Console.ReadLine()
             If noche > 0 Then
-                opcion = InputBox("Seleccione su habitacion
+                Console.WriteLine("Seleccione su habitacion
 1. Habitación Económica: $50.000 por noche.
 2. Habitación Estándar: $80.000 por noche.
 3. Habitación Suite: $120.000 por noche")
+                opcion = console.ReadLine()
                 Select Case opcion
                     Case 1
                         If noche > 5 Then
@@ -323,25 +340,27 @@ habitaciones
                             calculo = (descuento / habitacion)
                             descuentoAplicado = habitacion - calculo
                         End If
-                        MsgBox("Habitación Económica: $50.000 por noche
+                        console.WriteLine("Habitación Económica: $50.000 por noche
 Nombre del cliente: " & nombre &
 "Cantidad de noche: " & noche &
 "Descuento del 10%: " & descuentoAplicado)
                     Case 2
-                        MsgBox("Habitación Estándar: $80.000 por noche.
+                        console.WriteLine("Habitación Estándar: $80.000 por noche.
 Nombre del cliente: " & nombre &
 "Cantidad de noche: " & noche)
                     Case 3
-                        MsgBox("Habitación Suite: $120.000 por noche
+                        console.WriteLine("Habitación Suite: $120.000 por noche
 Nombre del cliente: " & nombre &
 "Cantidad de noche: " & noche)
                     Case Else
 
                 End Select
             Else
-                MsgBox("El numero tiene que ser mayor a 0")
+                console.WriteLine("El numero tiene que ser mayor a 0")
             End If
         Else
-            MsgBox("La id tiene que estar entre 8 y 10 numeros")
+            console.WriteLine("La id tiene que estar entre 8 y 10 numeros")
         End If
+    End Sub
+End Module
 ```
