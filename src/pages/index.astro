@@ -1,8 +1,10 @@
 ---
 import GlobalStyles from '../components/GlobalStyles.astro';
 import Layout from '../layouts/Layout.astro';
+import { ViewTransitions } from 'astro:transitions';
 ---
-
+<ViewTransitions />
+<aside transition:name="hero"></aside>
 <Layout title="Blog" description='Blog que contiene guias de diversas cosas y ejercicios de programacion'>
 	<h1 class="main__title">Inicio del blog</h1>
 	<p class="main__paragraph">Recopilacion de guias y ejercicio de programacion</p>
