@@ -15,14 +15,22 @@ const { frontmatter } = Astro.props;
 </head>
 <body>
     <Header />
-    <h1>{frontmatter.title}</h1>
-    <slot/>
+    <div class="post__conteiner">
+        <h1>{frontmatter.title}</h1>
+        <slot/>
+    </div>
 </body>
 <GlobalStyles />
 <style>
-    .conteiner {
-        margin: 0px 100px;
-        @media screen (width <= 600px){margin: 0px 20px}
+    h1 {
+        margin: 10px 0 30px 0;
+    
+    }
+    .post__conteiner {
+        background-color: rgb(99, 99, 99);
+        border-radius: 10px;
+        padding: 20px;
+        margin: 0px 30px;
     }
 
 </style>
