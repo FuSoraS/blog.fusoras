@@ -187,9 +187,7 @@ de año bisiesto es el año 2020, mientras que el año 2021 es un año común.
             End If
 ```
 ## Ejercicio 6
-### Ejercicio 6: Desarrolla un programa que solicite al usuario un número y luego
-muestre la secuencia de números desde 0 hasta el número ingresado, pero solo
-aquellos que son múltiplos de 3.
+### Ejercicio 6: Desarrolla un programa que solicite al usuario un número y luego muestre la secuencia de números desde 0 hasta el número ingresado, pero solo aquellos que son múltiplos de 3.
 ```vs
         Dim numIngresado As Integer
         Dim multiplo As Integer
@@ -267,7 +265,7 @@ Ingrese su contraseña: ")
             End If
         End While
 ```
-## Ejercicio 8 (no terminado)
+## Ejercicio 8
 ### Ejercicio 8 – Reservación de hotel
 Desarrolla un sistema de reservaciones de hotel donde los usuarios puedan ingresar sus datos,
 seleccionar una habitación y calcular el costo total de su estadía. El sistema debe considerar
