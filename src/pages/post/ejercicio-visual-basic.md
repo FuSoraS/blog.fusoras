@@ -308,59 +308,132 @@ Validaciones:
 El programa finalizar cuando el usuario lo desee. De lo contrario se podrá continuar reservando
 habitaciones
 ```vs
-Module VBModule
+Module Module1
+
     Sub Main()
         Dim nombre As String
         Dim id As String
         Dim cId As Integer
         Dim opcion As Integer
         Dim noche As Integer
-        Dim descuento As Integer = 10
+
+
+        ' Calculo
+        Dim descuento As Integer
         Dim descuentoAplicado As Integer
-        Dim calculo As Integer
-        Dim habitacion As Integer
-        console.WriteLine("Ingrese su nombre: ")
-        nombre = console.ReadLine()
-        console.WriteLine("Ingrese su Numero de indentificación: ")
-        id = console.ReadLine()
+        Dim costoNoche As Integer
+        Dim habitacion1 As Integer = 50000
+        Dim habitacion2 As Integer = 80000
+        Dim habitacion3 As Integer = 120000
+        Dim impuesto As Integer
+        Dim costoTotal As Integer
+
+        Console.WriteLine("Ingrese su nombre: ")
+        nombre = Console.ReadLine()
+        Console.WriteLine("Ingrese su Numero de indentificación: ")
+        id = Console.ReadLine()
         cId = Len(id)
+
         If cId >= 8 And cId <= 10 Then
-            Console.WriteLine("Ingrese la cantidad de noche: ")
-            noche = Console.ReadLine()
-            If noche > 0 Then
-                Console.WriteLine("Seleccione su habitacion
+            While opcion <= 3
+                Console.WriteLine("Ingrese la cantidad de noche: ")
+                noche = Console.ReadLine()
+                If noche > 0 Then
+                    Console.WriteLine("Seleccione su habitacion
 1. Habitación Económica: $50.000 por noche.
 2. Habitación Estándar: $80.000 por noche.
-3. Habitación Suite: $120.000 por noche")
-                opcion = console.ReadLine()
-                Select Case opcion
-                    Case 1
-                        If noche > 5 Then
-                            habitacion = 50000
-                            calculo = (descuento / habitacion)
-                            descuentoAplicado = habitacion - calculo
-                        End If
-                        console.WriteLine("Habitación Económica: $50.000 por noche
-Nombre del cliente: " & nombre &
-"Cantidad de noche: " & noche &
-"Descuento del 10%: " & descuentoAplicado)
-                    Case 2
-                        console.WriteLine("Habitación Estándar: $80.000 por noche.
-Nombre del cliente: " & nombre &
-"Cantidad de noche: " & noche)
-                    Case 3
-                        console.WriteLine("Habitación Suite: $120.000 por noche
-Nombre del cliente: " & nombre &
-"Cantidad de noche: " & noche)
-                    Case Else
+3. Habitación Suite: $120.000 por noche.
+4. Salir del programa")
+                    Console.WriteLine("Opcion: ")
+                    opcion = Console.ReadLine()
+                    Select Case opcion
+                        Case 1
+                            costoNoche = (habitacion1 * noche)
+                            If noche > 5 Then
+                                descuento = costoNoche / 10
 
-                End Select
-            Else
-                console.WriteLine("El numero tiene que ser mayor a 0")
-            End If
+                                descuentoAplicado = costoNoche - descuento
+                                impuesto = descuentoAplicado * 0.15
+                                costoTotal = descuentoAplicado + impuesto
+                                Console.WriteLine("Habitación Económica: $50.000 por noche
+Nombre del cliente: " & nombre & "
+Cantidad de noche: " & noche & "
+Costo (antes de impuesto) " & costoNoche & "
+Descuento del 10%: $" & descuento & "
+impuesto aplicaco: " & impuesto & "
+Costo total a pagar $" & costoTotal)
+                            Else
+                                impuesto = costoNoche * 0.15
+                                costoTotal = costoNoche + impuesto
+                                Console.WriteLine("Habitación Económica: $50.000 por noche
+Nombre del cliente: " & nombre & "
+Cantidad de noche: " & noche & "
+Costo (antes de impuesto) " & costoNoche & "
+impuesto aplicaco: " & impuesto & "
+Costo total a pagar $" & costoTotal)
+                            End If
+                        Case 2
+                            costoNoche = (habitacion2 * noche)
+                            If noche > 5 Then
+                                descuento = costoNoche / 10
+
+                                descuentoAplicado = costoNoche - descuento
+                                impuesto = descuentoAplicado * 0.15
+                                costoTotal = descuentoAplicado + impuesto
+                                Console.WriteLine("Habitación Económica: $80.000 por noche
+Nombre del cliente: " & nombre & "
+Cantidad de noche: " & noche & "
+Costo (antes de impuesto) " & costoNoche & "
+Descuento del 10%: $" & descuento & "
+impuesto aplicaco: " & impuesto & "
+Costo total a pagar $" & costoTotal)
+                            Else
+                                impuesto = costoNoche * 0.15
+                                costoTotal = costoNoche + impuesto
+                                Console.WriteLine("Habitación Económica: $80.000 por noche
+Nombre del cliente: " & nombre & "
+Cantidad de noche: " & noche & "
+Costo (antes de impuesto) " & costoNoche & "
+impuesto aplicaco: " & impuesto & "
+Costo total a pagar $" & costoTotal)
+                            End If
+                        Case 3
+                            costoNoche = (habitacion3 * noche)
+                            If noche > 5 Then
+                                descuento = costoNoche / 10
+
+                                descuentoAplicado = costoNoche - descuento
+                                impuesto = descuentoAplicado * 0.15
+                                costoTotal = descuentoAplicado + impuesto
+                                Console.WriteLine("Habitación Económica: $120.000 por noche
+Nombre del cliente: " & nombre & "
+Cantidad de noche: " & noche & "
+Costo (antes de impuesto) " & costoNoche & "
+Descuento del 10%: $" & descuento & "
+impuesto aplicaco: " & impuesto & "
+Costo total a pagar $" & costoTotal)
+                            Else
+                                impuesto = costoNoche * 0.15
+                                costoTotal = costoNoche + impuesto
+                                Console.WriteLine("Habitación Económica: $120.000 por noche
+Nombre del cliente: " & nombre & "
+Cantidad de noche: " & noche & "
+Costo (antes de impuesto) " & costoNoche & "
+impuesto aplicaco: " & impuesto & "
+Costo total a pagar $" & costoTotal)
+                            End If
+
+                        Case Else
+
+                    End Select
+                Else
+                    Console.WriteLine("El numero tiene que ser mayor a 0")
+                End If
+            End While
         Else
-            console.WriteLine("La id tiene que estar entre 8 y 10 numeros")
+            Console.WriteLine("La id tiene que estar entre 8 y 10 numeros")
         End If
     End Sub
+
 End Module
 ```
