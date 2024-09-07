@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownLayout.astro
-title: Mi configuracion de Visual Studio Code
-description: Configuracion de Visual Studio Code
+title: "Mi configuracion de Visual Studio Code"
+description: "Configuracion de Visual Studio Code"
 author: FuSoraS
 ---
 1. Precionar `Ctrl + Shift + p`
